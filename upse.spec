@@ -1,8 +1,8 @@
 %define name upse
-%define version 0.6.0
-%define release %mkrel 2
+%define version 1.0.0
+%define release %mkrel 1
 
-%define major 1.0.0
+%define major 2.0.0
 %define libname %mklibname upse %major
 %define develname %mklibname -d upse
 
@@ -88,7 +88,7 @@ rm -rf %{buildroot}
 %files -n %libname
 %defattr(-,root,root)
 %_libdir/libupse.so.%major
-%_libdir/libupse.so.1
+%_libdir/libupse.so.2
 
 %files -n %develname
 %defattr(-,root,root)
