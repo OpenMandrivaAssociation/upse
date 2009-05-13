@@ -1,6 +1,6 @@
 %define name upse
 %define version 1.0.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major 2.0.0
 %define libname %mklibname upse %major
