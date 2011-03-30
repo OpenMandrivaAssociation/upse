@@ -11,7 +11,8 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://distfiles.atheme.org/%{name}-%{version}.tbz2
-Patch: upse-1.0.0-new-audacious.patch
+Patch0: upse-1.0.0-new-audacious.patch
+Patch1: upse-disable-audacious.patch
 License: GPLv2
 Group: Sound
 Url: http://nenolod.net/upse
@@ -64,7 +65,7 @@ This adds Playstation sound emulation to the Audacious Media Player.
 
 %prep
 %setup -q
-%patch -p1 -b .audacious2.2
+%apply_patches
 
 %build
 %configure2_5x
