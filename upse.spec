@@ -16,7 +16,6 @@ License: GPLv2
 Group: Sound
 Url: http://nenolod.net/upse
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: libaudacious-devel >= 5:1.4
 BuildRequires: libao-devel
 
 %description
@@ -46,6 +45,8 @@ emulators (SexyPSF), UPSE supports playing back most (a few replayers
 seem to have bugs or are dependent on some undocumented feature) PS1
 module formats.
 
+%if 0
+BuildRequires: libaudacious-devel >= 5:1.4
 %package -n audacious-upse
 Summary: Playstation sound emulator plugin for Audacious
 Group: Sound
@@ -58,6 +59,7 @@ seem to have bugs or are dependent on some undocumented feature) PS1
 module formats.
 
 This adds Playstation sound emulation to the Audacious Media Player.
+%endif
 
 %prep
 %setup -q
@@ -97,8 +99,10 @@ rm -rf %{buildroot}
 %_includedir/*
 %_libdir/libupse.so
 
+%if 0
 %files -n audacious-upse
 %defattr(-,root,root)
 %_libdir/audacious/Input/upse-audacious.so
+%endif
 
 
