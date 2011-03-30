@@ -17,6 +17,7 @@ Group: Sound
 Url: http://nenolod.net/upse
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libao-devel
+BuildRequires: zlib-devel
 
 %description
 UPSE is a work in progress Playstation sound emulator. Unlike other
