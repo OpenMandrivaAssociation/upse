@@ -1,0 +1,38 @@
+diff -p -up upse-1.0.0/src/upse-audacious/Makefile~ upse-1.0.0/src/upse-audacious/Makefile
+--- upse-1.0.0/src/upse-audacious/Makefile~	2008-05-01 12:17:42.000000000 +0200
++++ upse-1.0.0/src/upse-audacious/Makefile	2010-02-03 10:17:52.000000000 +0100
+@@ -10,4 +10,4 @@ plugindir = `pkg-config audacious --vari
+ 
+ CFLAGS += ${PLUGIN_CFLAGS}
+ CPPFLAGS += ${PLUGIN_CPPFLAGS} ${AUDACIOUS_CFLAGS} -I../libupse
+-LIBS += ${AUDACIOUS_LIBS} -lz -L../libupse -lupse
++LIBS += ${AUDACIOUS_LIBS} -laudcore -lz -L../libupse -lupse
+diff -p -up upse-1.0.0/src/upse-audacious/plugin.c~ upse-1.0.0/src/upse-audacious/plugin.c
+--- upse-1.0.0/src/upse-audacious/plugin.c~	2008-05-01 12:17:42.000000000 +0200
++++ upse-1.0.0/src/upse-audacious/plugin.c	2010-02-03 10:15:32.000000000 +0100
+@@ -198,17 +198,6 @@ static void upse_aud_seek(InputPlayback 
+     seek = time * 1000;
+ }
+ 
+-static void upse_aud_getsonginfo(char *fn, char **title, int *length)
+-{
+-    upse_psf_t *tmp;
+-
+-    if((tmp = upse_get_psf_metadata(fn, &upse_aud_iofuncs))) {
+-        *length = tmp->length;
+-        *title = upse_aud_get_title_psf(fn, tmp);
+-        upse_free_psf_metadata(tmp);
+-    }
+-}
+-
+ static Tuple *upse_aud_get_tuple_psf(const gchar *fn, upse_psf_t *psf) {
+     Tuple *tuple = NULL;
+ 
+@@ -287,7 +276,6 @@ InputPlugin upse_ip =
+     .stop = upse_aud_stop,
+     .pause = upse_aud_pause,
+     .seek = upse_aud_seek,
+-    .get_song_info = upse_aud_getsonginfo,
+     .get_song_tuple = get_tuple_psf,
+     .is_our_file_from_vfs = is_our_fd,
+     .vfs_extensions = upse_fmts,
