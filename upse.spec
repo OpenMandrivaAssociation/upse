@@ -108,3 +108,54 @@ rm -rf %{buildroot}
 %endif
 
 
+
+
+%changelog
+* Sat Mar 31 2012 Götz Waschk <waschk@mandriva.org> 1.0.0-6mdv2012.0
++ Revision: 788423
+- yearly rebuild
+
+* Wed Mar 30 2011 Götz Waschk <waschk@mandriva.org> 1.0.0-5
++ Revision: 649099
+- really disable audacious plugin
+- update build deps
+- disable audacious build
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - the mass rebuild of 2010.1 packages
+
+* Sun Mar 28 2010 Funda Wang <fwang@mandriva.org> 1.0.0-4mdv2010.1
++ Revision: 528374
+- rebuild
+
+* Wed Feb 03 2010 Götz Waschk <waschk@mandriva.org> 1.0.0-3mdv2010.1
++ Revision: 499937
+- patch for new audacious
+
+* Wed May 13 2009 Götz Waschk <waschk@mandriva.org> 1.0.0-2mdv2010.0
++ Revision: 375249
+- rebuild for new audacious
+
+* Mon Jul 21 2008 Götz Waschk <waschk@mandriva.org> 1.0.0-1mdv2009.0
++ Revision: 239403
+- new version
+- new major
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Mon Feb 18 2008 Götz Waschk <waschk@mandriva.org> 0.6.0-2mdv2008.1
++ Revision: 171210
+- rebuild for new libmcs
+
+* Mon Feb 11 2008 Götz Waschk <waschk@mandriva.org> 0.6.0-1mdv2008.1
++ Revision: 165055
+- new version
+
+* Thu Jan 24 2008 Götz Waschk <waschk@mandriva.org> 0.5.0-1mdv2008.1
++ Revision: 157481
+- import upse
+
+
+* Thu Jan 24 2008 Götz Waschk <waschk@mandriva.org> 0.5.0-1mdv2008.1
+- initial package
