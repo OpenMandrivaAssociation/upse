@@ -65,7 +65,7 @@ This adds Playstation sound emulation to the Audacious Media Player.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %configure2_5x
