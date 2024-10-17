@@ -15,7 +15,7 @@ Patch0: upse-1.0.0-new-audacious.patch
 Patch1: upse-disable-audacious.patch
 License: GPLv2
 Group: Sound
-Url: http://nenolod.net/upse
+Url: https://nenolod.net/upse
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libao-devel
 BuildRequires: zlib-devel
